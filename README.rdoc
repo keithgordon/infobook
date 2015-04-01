@@ -1,5 +1,3 @@
 == Infobook
 
-An social networking web application with features similar to Facebook
-
-<tt>rake doc:app</tt>.
+An social networking web application with various features.
