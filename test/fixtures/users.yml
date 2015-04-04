@@ -3,3 +3,4 @@ michael:
   last_name: "Gordon"
   email:     "Michael@gmail.com"
   profile_name: "keithgordon"
+  encrypted_password: "password123"
