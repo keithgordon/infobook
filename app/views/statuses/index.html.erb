@@ -4,7 +4,7 @@
 
   <%= link_to "Post a New Status", new_status_path, class: "btn btn-success" %>
 
-  <%= @statuses.each do |status| %>
+  <% @statuses.each do |status| %>
     <div class="status">
       <div class="row">
         <div class="col-md-1">
