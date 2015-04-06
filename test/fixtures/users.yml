@@ -5,4 +5,9 @@ michael:
   profile_name: "keithgordon"
   encrypted_password: "password123"
 
-
+john:
+  first_name: "John"
+  last_name: "Doe"
+  email:     "johndoe@gmail.com"
+  profile_name: "jmoney"
+  encrypted_password: "password123"

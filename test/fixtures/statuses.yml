@@ -9,5 +9,5 @@ two:
   user: michael
 
 three:
-  content: "something cool"
-  user: andrew
+  content: MyText
+  user: john
