@@ -11,3 +11,11 @@ john:
   email:     "johndoe@gmail.com"
   profile_name: "jmoney"
   encrypted_password: "password123"
+
+bill:
+  first_name: "Bill"
+  last_name: "Smith"
+  email:     "bsmith@gmail.com"
+  profile_name: "bills"
+  encrypted_password: "password123"
+
