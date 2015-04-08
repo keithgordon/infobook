@@ -45,8 +45,8 @@ class UserTest < ActiveSupport::TestCase
     end
 
     test "that no error is raised when error is raised" do
-    assert_nothing_raised do
-      users(:bill).friends
+      assert_nothing_raised do
+        users(:bill).friends
     end
   end
 
@@ -54,7 +54,9 @@ class UserTest < ActiveSupport::TestCase
       users(:bill).friends << users(:michael)
       users(:bill).friends.reload
       assert users(:bill).friends.include?(users(:michael))
-   end
+    end
 
- end
-
+     test "that calling to_param on a user returns the profile name" do
+       assert_equal "keithgordon", users(:michael).to_param
+     end
+    end
