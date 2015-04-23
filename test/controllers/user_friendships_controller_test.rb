@@ -8,8 +8,8 @@ context "#new" do
         should "redirect to the login page" do
             get :new
             assert_response :redirect
+          end
         end
-    end
 
     context "when logged in" do
         setup do
@@ -51,46 +51,45 @@ context "#new" do
             assert_response :not_found
         end
 
-        should "ask if you really want to request this friendship" do
+        should "ask if you really want to friend the user" do
             get :new, friend_id: users(:bill)
             assert_match /Do you really want to friend #{users(:bill).full_name}?/, response.body
         end
-
+      end
     end
-end
 
-context "#create" do
-    context "when not logged in" do
+    context "#create" do
+      context "when not logged in" do
         should "redirect to the login page" do
             get :new
             assert_response :redirect
             assert_redirected_to login_path
-        end
-    end
-
-    context "when logged in" do
-        setup do
-            sign_in users(:michael)
+          end
         end
 
-        context "with no friend_id" do
+        context "when logged in" do
             setup do
-                post :create
+                sign_in users(:michael)
             end
 
-            should "set the flash error message" do
-                assert !flash[:error].empty?
-            end
+            context "with no friend_id" do
+                setup do
+                    post :create
+                end
 
-            should "redirect to the site root" do
-                assert_redirected_to root_path
-            end
-        end
+                should "set the flash error message" do
+                    assert !flash[:error].empty?
+                end
 
-        context "with a valid friend_id" do
-            setup do
-                post :create, user_friendship: { friend_id: users(:bill) }
-            end
+                should "redirect to the site root" do
+                    assert_redirected_to root_path
+                end
+             end
+
+            context "with a valid friend_id" do
+                setup do
+                    post :create, user_friendship: { friend_id: users(:bill) }
+                end
 
             should "assign a friend object" do
                 assert assigns(:friend)
@@ -117,6 +116,6 @@ context "#create" do
               assert_equal "You are now friends with #{users(:bill).full_name}", flash[:success]
             end
           end
-       end
+        end
+      end
     end
-end
