@@ -32,5 +32,5 @@ private
     # since you'll be able to reuse the same permit list between create and update. Also, you
     # can specialize this method with per-user checking of permissible attributes.
     def user_friendship_params
-      params.require(:user_friendship).permit(:friend_id, :user_id, :profile_name, :state, :user_friendship, :friend. :users, :pending_user_friendship, :pending_friends)
+      params.require(:user_friendship).permit(:friend_id, :user_id, :profile_name, :state, :user_friendship, :friend, :users, :pending_user_friendship, :pending_friends)
     end
