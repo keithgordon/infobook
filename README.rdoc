@@ -1,3 +1,12 @@
 == Infobook
 
 An social networking web application with various features.
+
+Infobook is a work-in-progress Twitter clone built with Ruby on Rails.
+
+Features
+User authentication(devise)
+Gravatar Intergation(profile pic)
+Twitter bootstrap
+Data validation
+Unit testing
